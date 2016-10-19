@@ -1,0 +1,27 @@
+<h1>Add New Product</h1>
+
+<p>Category</p>
+
+	<!-- action has to be route name -->
+<form action="/products/p_new" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<select>
+	<option>Electronics</option>
+	<option>Household</option>
+	<option>Gardening</option>
+	<option>Automotive</option>
+	<option>Ninjas</option>
+</select>
+
+<p>Name</p>
+<input type="text" name="name">
+<p>Description</p>
+<input type="text" name="description">
+<p>Pricing</p>
+<input type="text" name="pricing">
+
+<button style="padding: 6px; margin-top: 15px; display: block;"">Create</button>
+</form>
+
+
+<a style="margin-top: 15px;" href="/products">back</a>

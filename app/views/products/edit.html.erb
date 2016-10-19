@@ -1,0 +1,28 @@
+<h1>Edit a Product Here</h1>
+
+<p>Category</p>
+
+<form action="/products/<%= @products.id %>" method="post" >
+<input type="hidden" name="_method" value="patch">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+<select name="category">
+	<option>Electronics</option>
+	<option>Household</option>
+	<option>Gardening</option>
+	<option>Automotive</option>
+	<option>Ninjas</option>
+</select>
+
+<p>Name</p>
+<input type="text" name="name">
+<p>Description</p>
+<input type="text" name="description">
+<p>Pricing</p>
+<input type="text" name="pricing">
+
+<button style="padding: 6px; margin-top: 15px; display: block;">update</button>
+</form>
+
+
+<a href="/products">back</a>

@@ -1,0 +1,26 @@
+<h1>Welcome to Product Page</h1>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |cat| %>
+		<tr>
+			<td><%= cat.name %></td>
+			<td><%= cat.description %></td>
+			<!-- Cool way to convert num to $ -->
+			<td><%= number_to_currency(cat.pricing) %></td>
+			<td><a href="/products/show">Show</a> | <a href="/products/<%= cat.id %>/edit">Edit</a> | <a data-method = "delete" href="/products/<%= cat.id %>">Delete</a></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<p><a href="/products/new_product">Add a New Product</a></p>
